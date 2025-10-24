@@ -6,7 +6,7 @@
   ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.ts" },
-    { "source": "/(.*\\.(?:js|css|png|jpg|svg|ico|json))", "destination": "/dist/public/$1" },
+    { "source": "/(.*\\.(?:js|css|png|jpg|svg|ico|json|avif))", "destination": "/dist/public/$1" },
     { "source": "/(.*)", "destination": "/dist/public/index.html" }
   ],
   "headers": [

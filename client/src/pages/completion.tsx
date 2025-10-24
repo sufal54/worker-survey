@@ -30,30 +30,30 @@ export default function Completion() {
     queryKey: ["/api/survey/response"],
   });
 
-  const completedDate = surveyResponse?.completedAt 
-    ? new Date(surveyResponse.completedAt).toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-    : new Date().toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      });
+  const completedDate = surveyResponse?.completedAt
+    ? new Date(surveyResponse.completedAt).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+    : new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
 
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-3">
-            <img 
-              src={logoPath} 
-              alt="Excellent Place to Work" 
+            <img
+              src={logoPath}
+              alt="Excellent Place to Work"
               className="h-10 md:h-12 w-auto object-contain"
               data-testid="img-logo"
             />
@@ -161,7 +161,7 @@ export default function Completion() {
       <footer className="border-t mt-12">
         <div className="container px-4 py-6 md:px-6">
           <p className="text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Excellent Place to Work. All rights reserved. | 
+            © {new Date().getFullYear()} Excellent Place to Work. All rights reserved. |
             <a href="https://www.excellentplacetowork.com" className="hover:underline ml-1" target="_blank" rel="noopener noreferrer">
               www.excellentplacetowork.com
             </a>
