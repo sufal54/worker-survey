@@ -1,0 +1,11 @@
+node_modules
+.env
+.env.local
+.replit
+.upm
+*.log
+.DS_Store
+.vscode
+.idea
+attached_assets
+.local
