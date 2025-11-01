@@ -63,7 +63,7 @@ export default function Completion() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => window.location.href = '/api/logout'}
+              onClick={() => window.location.href = '/'}
               data-testid="button-logout"
             >
               <LogOut className="h-4 w-4 mr-2" />
