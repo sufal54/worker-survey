@@ -10,7 +10,7 @@ import logoPath from "@assets/execellent-place-to-work-logo2-mePgEQXl7XTE2WQp_17
 import type { SurveyResponse } from "@shared/schema";
 
 export default function Completion() {
-  const { user, isAuthenticated, isLoading } = useAuth();
+  const { user, isAuthenticated, isLoading, logout } = useAuth();
   const { toast } = useToast();
 
   useEffect(() => {
@@ -63,7 +63,10 @@ export default function Completion() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => window.location.href = '/'}
+              onClick={async () => {
+                await logout();
+                window.location.href = '/';
+              }}
               data-testid="button-logout"
             >
               <LogOut className="h-4 w-4 mr-2" />
