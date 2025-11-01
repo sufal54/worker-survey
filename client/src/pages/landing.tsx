@@ -59,6 +59,18 @@ export default function Landing() {
               data-testid="img-logo"
             />
           </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+
+              setLocation("/hr-login");
+            }}
+            data-testid="button-logout"
+          >
+
+            <span className="hidden sm:inline">HR-pannel</span>
+          </Button>
           <ThemeToggle />
         </div>
       </header>
