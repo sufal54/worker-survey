@@ -1,0 +1,80 @@
+Overview:
+We need a multi-tenant survey analytics platform with three roles: Admin (Super Admin), Company HR, and Employee.
+The access and data visibility must be role-based to ensure data isolation and privacy between companies.
+
+Requirements
+1. Admin (/dashboard)
+
+The Admin (Super Admin) can view all survey submissions from all companies and their employees.
+
+Admin can search employee responses using the employee response code.
+
+Admin can view:
+
+List of all companies
+
+List of all employees under each company
+
+Full details of each employee’s survey submission (each question and answer)
+
+Admin can generate and issue certifications to employers based on employees’ insights.
+
+Admin should have full access to analytics and raw data.
+
+Default Admin account credentials:
+
+Email: admin@admin.com (or similar)
+
+Password: admin@123
+
+Admin dashboard route: /dashboard
+
+2. Company HR
+
+Each company has its own HR account.
+
+HR users can:
+
+View only their company’s analytics and insights (not raw data).
+
+See aggregated analytics, not individual employee answers.
+
+View visualizations of survey insights (charts, metrics, summaries).
+
+HR cannot:
+
+Access or view data of other companies.
+
+Search or view specific employee responses.
+
+HR login should be automatically created and linked via domain-based email ID.
+
+Example: If an employee with @xyzcorp.com submits a survey, the HR with @xyzcorp.com domain automatically gets access to that company’s analytics dashboard.
+
+HR dashboard route: /hr-dashboard (or similar)
+
+3. Employee
+
+Employees submit their survey forms.
+
+Each submission generates a unique response code.
+
+Employees’ survey data should be automatically linked to their company (identified by their domain email ID).
+
+Security & Data Isolation
+
+Company-level data segregation must be strictly enforced.
+
+HR can see only aggregated analytics for their company, not identifiable employee-level data.
+
+Admin can view all raw data and employee-level details.
+
+Use secure authentication and authorization (role-based access control).
+
+Expected Outcome
+
+By implementing these refinements:
+
+The platform will be organized, secure, and production-ready.
+
+Admins will have complete control and visibility, while HRs will have limited analytical access to their respective companies’ insights.
