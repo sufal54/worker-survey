@@ -8,10 +8,12 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import logoPath from "@assets/execellent-place-to-work-logo2-mePgEQXl7XTE2WQp_1760272090748.avif";
 import type { SurveyResponse } from "@shared/schema";
+import { useLocation } from "wouter";
 
 export default function Completion() {
   const { user, isAuthenticated, isLoading, logout } = useAuth();
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -65,7 +67,7 @@ export default function Completion() {
               size="sm"
               onClick={async () => {
                 await logout();
-                window.location.href = '/';
+                setLocation("/");
               }}
               data-testid="button-logout"
             >
